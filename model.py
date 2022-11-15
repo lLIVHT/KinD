@@ -1,6 +1,9 @@
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
-from tensorflow.contrib.layers.python.layers import initializers
+import tensorflow._api.v2.compat.v1 as tf
+tf.disable_v2_behavior()
+#import tensorflow.contrib.slim as slim 注释掉原代码，改从tf_slim 中调用slim
+import tf_slim as slim
+#from tensorflow.contrib.layers.python.layers import initializers
+from tf_slim.layers import initializers
 
 def lrelu(x, trainbable=None):
     return tf.maximum(x*0.2,x)

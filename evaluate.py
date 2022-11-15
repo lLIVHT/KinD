@@ -4,14 +4,20 @@ import os
 import time
 import random
 from PIL import Image
-import tensorflow as tf
+
+
 import numpy as np
 from utils import *
 from model import *
 from glob import glob
 from skimage import color,filters
+# import tensorflow.compat.v1 as tf
+import tensorflow._api.v2.compat.v1 as tf
+tf.disable_v2_behavior()
+
 
 sess = tf.Session()
+
 
 input_decom = tf.placeholder(tf.float32, [None, None, None, 3], name='input_decom')
 input_low_r = tf.placeholder(tf.float32, [None, None, None, 3], name='input_low_r')
